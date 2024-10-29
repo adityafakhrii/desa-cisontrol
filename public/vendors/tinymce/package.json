@@ -48,4 +48,7 @@
     "url": "git+https://github.com/tinymce/tinymce-dist.git"
   },
   "version": "5.0.13",
-  "d
+  "dependencies": {
+    "tinymce": "file:"
+  }
+}
