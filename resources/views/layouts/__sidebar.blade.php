@@ -1,6 +1,6 @@
     <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" hx-boost="true">
         <ul class="nav">
           <li class="nav-item sidebar-profile mt-4">
             <a href="#">
@@ -9,6 +9,12 @@
                   <h3 class="mb-1 profile-name">Desa Cisontrol</h3>
                 </div>
               </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('dashboard.index') }}">
+              <i class="mdi mdi-cards-variant menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
@@ -36,7 +42,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('master-kependudukan.index') }}">
               <i class="mdi mdi-account-multiple menu-icon"></i>
               <span class="menu-title">Master Kependudukan</span>
             </a>

@@ -10162,7 +10162,7 @@
   .table, .jsgrid .jsgrid-table {
     width: 100%;
     margin-bottom: 1rem;
-    color: #a7afb7;
+    color: #81868c;
   }
 
   .table th, .jsgrid .jsgrid-table th,
@@ -31521,3 +31521,8 @@
   }
 
   /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */
+
+
+  .sortStyle:hover {
+    cursor: pointer;
+  }
