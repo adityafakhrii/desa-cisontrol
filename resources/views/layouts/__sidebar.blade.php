@@ -1,6 +1,6 @@
     <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar" hx-boost="true">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item sidebar-profile mt-4">
             <a href="#">
@@ -12,7 +12,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('dashboard.index') }}">
+            <a class="nav-link" href="/">
               <i class="mdi mdi-cards-variant menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -73,27 +73,12 @@
           </li>
 
           @auth
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="mdi mdi-account-multiple menu-icon"></i>
-              <span class="menu-title">{{ auth()->user()->name }}</span>
-            </a>
-          </li>
           <li class="nav-item report-generator mt-4">
 
-            <form action="{{ route('logout') }}" method="post">
+            <form id="logout-form" action="{{ route('logout') }}" method="post">
                 @csrf
-                <button type="submit" class="btn btn-danger btn-icon-text w-100">
-                    Logout
-                </button>
+                <button type="button" class="btn btn-danger btn-icon-text w-100" onclick="showSwal('warning-message-and-cancel')">Logout</button>
             </form>
-          </li>
-          @else
-          <li class="nav-item">
-            <a class="nav-link" href="/login">
-              <i class="mdi mdi-account-multiple menu-icon"></i>
-              <span class="menu-title">Login</span>
-            </a>
           </li>
           @endauth
 

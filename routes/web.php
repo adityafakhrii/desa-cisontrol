@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 
-Route::resource('dashboard', Controllers\DashboardController::class)->middleware('auth');
+Route::resource('/', Controllers\DashboardController::class)->middleware('auth');
 
 Route::resource('master-kependudukan', Controllers\MasterKependudukanController::class);
 Route::resource('kartu_keluarga', Controllers\KartuKeluargaController::class);
