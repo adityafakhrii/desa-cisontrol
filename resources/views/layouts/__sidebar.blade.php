@@ -18,6 +18,30 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="mdi mdi-table-large menu-icon"></i>
+              <span class="menu-title">Master Data</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#">Data RT</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Data RW</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Data Dusun</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Data Desa/Kelurahan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Data Kecamatan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Data Kabupaten</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Data Provinsi</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('master-kependudukan.index') }}">
+              <i class="mdi mdi-account-multiple menu-icon"></i>
+              <span class="menu-title">Master Kependudukan</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="mdi mdi-cards-variant menu-icon"></i>
               <span class="menu-title">eKTP (F.1.07)</span>
@@ -39,12 +63,6 @@
             <a class="nav-link" href="#">
               <i class="mdi mdi-account-multiple menu-icon"></i>
               <span class="menu-title">Keterangan Kelahiran</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('master-kependudukan.index') }}">
-              <i class="mdi mdi-account-multiple menu-icon"></i>
-              <span class="menu-title">Master Kependudukan</span>
             </a>
           </li>
           <li class="nav-item">

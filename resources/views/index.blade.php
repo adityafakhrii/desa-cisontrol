@@ -4,11 +4,9 @@
 @endphp
 
 @section('content')
-<div class="main-panel">
-    <div class="content-wrapper">
       <div class="d-xl-flex justify-content-between align-items-center mb-4 pb-2">
         <div class="text-dark">
-          <h2 class="mb-1 font-weight-bold">Statistik Kependudukan!</h2>
+          <h2 class="mb-1 font-weight-bold">Statistik Desa Cisontrol</h2>
           <p class="text-small mb-0">{{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}</p>
         </div>
       </div>
@@ -70,15 +68,7 @@
           </div>
         </div>
       </div>
-    </div>
     <!-- content-wrapper ends -->
     <!-- partial:partials/_footer.html -->
-    <footer class="footer">
-      <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2019 <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved. Terms of use | Privacy Policy</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with Love</span>
-      </div>
-    </footer>
-    <!-- partial -->
-  </div>
+
 @endsection
