@@ -95,7 +95,7 @@
 
             <form id="logout-form" action="{{ route('logout') }}" method="post">
                 @csrf
-                <button type="button" class="btn btn-danger btn-icon-text w-100" onclick="showSwal('warning-message-and-cancel')">Logout</button>
+                <button type="button" class="btn btn-danger btn-icon-text w-100" onclick="showSwal('warning-message-and-cancel')">KELUAR</button>
             </form>
           </li>
           @endauth

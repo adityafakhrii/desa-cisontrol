@@ -6,7 +6,7 @@ use App\Http\Controllers;
 Route::middleware('auth')->group(function () {
     // Semua rute di dalam grup ini akan memiliki middleware 'auth'
     Route::resource('/', Controllers\DashboardController::class);
-    Route::post('logout', [Controllers\LogoutController::class, 'logout'])->name('logout');
+    Route::post('logout', Controllers\LogoutController::class)->name('logout');
 });
 
 Route::middleware('guest')->group(function () {
