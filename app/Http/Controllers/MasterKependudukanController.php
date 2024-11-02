@@ -104,9 +104,6 @@ class MasterKependudukanController extends Controller
         return redirect()->route('master-kependudukan.index')->with('success', 'Data kependudukan berhasil disimpan.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         $kependudukan = MasterKependudukan::findOrFail($id);
@@ -115,24 +112,21 @@ class MasterKependudukanController extends Controller
 
     public function edit($id)
     {
-        $kependudukan = MasterKependudukan::findOrFail($id);
-        return view('master_kependudukan.edit', compact('kependudukan'));
+        $data = MasterKependudukan::findOrFail($id);
+        return view('master_kependudukan.edit', compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
         $kependudukan = MasterKependudukan::findOrFail($id);
 
-        $request->validate([
-            'nik' => 'required|max:16|unique:kependudukan,nik,' . $id,
-            'no_kk' => 'required|max:16',
-            'nama' => 'required|string|max:255',
-            // Validation rules are the same as in store() method
-            // ...
-        ]);
+        // $request->validate([
+        //     'nik' => 'required|max:16|unique:kependudukan,nik,' . $id,
+        //     'no_kk' => 'required|max:16',
+        //     'nama' => 'required|string|max:255',
+        //     // Validation rules are the same as in store() method
+        //     // ...
+        // ]);
 
         // Upload file if exists
         if ($request->hasFile('file_biodata')) {
