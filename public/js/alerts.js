@@ -5,28 +5,27 @@
       'use strict';
       if (type === 'warning-message-and-cancel') {
         swal({
-          title: 'Apakah anda yakin?',
-          text: "You won't be able to revert this!",
+          title: 'Apakah anda yakin ingin keluar?',
+          text: "Anda tidak akan bisa mengembalikannya!",
           icon: 'warning',
           buttons: {
             cancel: {
-              text: "Cancel",
+              text: "Batal",
               value: null,
               visible: true,
-              className: "btn btn-danger",
+            //   className: "btn btn-outline-primary btn-cancel",
               closeModal: true,
             },
             confirm: {
-              text: "OK",
+              text: "Keluar",
               value: true,
               visible: true,
-              className: "btn btn-primary",
+            //   className: "btn btn-danger btn-confirm",
               closeModal: true
             }
           }
         }).then((willLogout) => {
           if (willLogout) {
-            console.log('Logging out...'); // Debug log
             document.getElementById('logout-form').submit(); // Mengirim formulir
           }
         });
