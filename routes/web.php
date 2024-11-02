@@ -3,7 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 
-Route::resource('/', Controllers\DashboardController::class)->middleware('auth');
+Route::middleware('auth')->group(function () {
+    // Semua rute di dalam grup ini akan memiliki middleware 'auth'
+    Route::resource('/', Controllers\DashboardController::class);
+    Route::post('logout', [Controllers\LogoutController::class, 'logout'])->name('logout');
+});
+
+Route::middleware('guest')->group(function () {
+    // Semua rute di dalam grup ini akan memiliki middleware 'guest'
+    Route::get('login', [Controllers\LoginController::class, 'loginForm'])->name('login');
+    Route::post('login', [Controllers\LoginController::class, 'authenticate']);
+});
 
 Route::resource('master-kependudukan', Controllers\MasterKependudukanController::class);
 Route::resource('kartu_keluarga', Controllers\KartuKeluargaController::class);
@@ -18,10 +28,3 @@ Route::resource('kab_kota', Controllers\KabKotaController::class);
 Route::resource('provinsi', Controllers\ProvinsiController::class);
 Route::resource('pendidikan', Controllers\PendidikanController::class);
 Route::resource('pekerjaan', Controllers\PekerjaanController::class);
-
-
-Route::get('login', [Controllers\LoginController::class, 'loginForm'])->name('login')->middleware('guest');
-
-Route::post('login', [Controllers\LoginController::class, 'authenticate'])->middleware('guest');
-
-Route::post('logout', Controllers\LogoutController::class, 'logout')->name('logout')->middleware('auth');
