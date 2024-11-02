@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Deed UI Admin</title>
+  <title>Desa Cisontrol App | Masuk</title>
   <!-- base:css -->
   <link rel="stylesheet" href="{{ asset('vendors/mdi/css/materialdesignicons.min.css') }}">
   <link rel="stylesheet" href="{{ asset('vendors/css/vendor.bundle.base.css') }}">
@@ -15,7 +15,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{{ asset('css/vertical-layout-light/style.css') }}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" />
+  <link rel="shortcut icon" href="{{ asset('images/logo-mini.svg') }}" />
 </head>
 
 <body class="sidebar-icon-only">
