@@ -42,6 +42,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{ route('kartu-keluarga.index') }}">
+              <i class="mdi mdi-account-multiple menu-icon"></i>
+              <span class="menu-title">Kartu Keluarga</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="mdi mdi-cards-variant menu-icon"></i>
               <span class="menu-title">eKTP (F.1.07)</span>
@@ -51,12 +57,6 @@
             <a class="nav-link" href="#">
               <i class="mdi mdi-cards-variant menu-icon"></i>
               <span class="menu-title">Statistics Kependudukan</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="mdi mdi-account-multiple menu-icon"></i>
-              <span class="menu-title">Kartu Keluarga</span>
             </a>
           </li>
           <li class="nav-item">

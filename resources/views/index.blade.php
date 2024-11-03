@@ -12,18 +12,18 @@
       </div>
       <div class="row">
         <div class="col-sm-3 grid-margin stretch-card">
-          <div class="card card-variant-border-danger">
-            <div class="card-variant-triangle-danger"></div>
-            <div class="card-body">
-              <div class="d-xl-flex d-lg-block d-sm-block  d-flex align-items-center">
-                <i class="mdi mdi-account-group-outline large-icons mr-3"></i>
-                <div>
-                  <p class="text-dark">Jumlah Penduduk</p>
-                  <h1 class="text-dark font-weight-bold">2530</h1>
+            <div class="card card-variant-border-danger">
+                <div class="card-variant-triangle-danger"></div>
+                <div class="card-body">
+                    <div class="d-xl-flex d-lg-block d-sm-block d-flex align-items-center">
+                        <i class="mdi mdi-account-group-outline large-icons mr-3"></i>
+                        <div>
+                            <p class="text-dark">Jumlah Penduduk</p>
+                            <h1 class="text-dark font-weight-bold">{{ $jumlahPenduduk }}</h1> <!-- Menampilkan total data -->
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
         <div class="col-sm-3 grid-margin stretch-card">
           <div class="card card-variant-border-dark">
@@ -40,32 +40,33 @@
           </div>
         </div>
         <div class="col-sm-3 grid-margin stretch-card">
-          <div class="card card-variant-border-info">
-            <div class="card-variant-triangle-info"></div>
-            <div class="card-body">
-              <div class="d-xl-flex d-lg-block d-sm-block  d-flex align-items-center">
-                <i class="mdi mdi-account-group-outline large-icons mr-3"></i>
-                <div>
-                    <p class="text-dark">Jumlah RW</p>
-                    <h1 class="text-dark font-weight-bold">2530</h1>
+            <div class="card card-variant-border-info">
+                <div class="card-variant-triangle-info"></div>
+                <div class="card-body">
+                    <div class="d-xl-flex d-lg-block d-sm-block d-flex align-items-center">
+                        <i class="mdi mdi-account-group-outline large-icons mr-3"></i>
+                        <div>
+                            <p class="text-dark">Jumlah RW</p>
+                            <h1 class="text-dark font-weight-bold">{{ $jumlahRW }}</h1> <!-- Menampilkan jumlah RW -->
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
+
         <div class="col-sm-3 grid-margin stretch-card">
-          <div class="card card-variant-border-warning">
-              <div class="card-variant-triangle-warning"></div>
-            <div class="card-body">
-              <div class="d-xl-flex d-lg-block d-sm-block  d-flex align-items-center">
-                <i class="mdi mdi-account-group-outline large-icons mr-3"></i>
-                <div>
-                    <p class="text-dark">Jumlah RT</p>
-                    <h1 class="text-dark font-weight-bold">2530</h1>
+            <div class="card card-variant-border-warning">
+                <div class="card-variant-triangle-warning"></div>
+                <div class="card-body">
+                    <div class="d-xl-flex d-lg-block d-sm-block d-flex align-items-center">
+                        <i class="mdi mdi-account-group-outline large-icons mr-3"></i>
+                        <div>
+                            <p class="text-dark">Jumlah RT</p>
+                            <h1 class="text-dark font-weight-bold">{{ $jumlahRT }}</h1> <!-- Menampilkan jumlah RT -->
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
       </div>
     <!-- content-wrapper ends -->

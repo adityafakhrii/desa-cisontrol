@@ -20,7 +20,7 @@
 
               <div class="form-group">
                 <label for="no_kk">Nomor KK</label>
-                <input type="text" class="form-control" id="no_kk" name="no_kk" placeholder="Nomor KK" value="{{ $data->no_kk }}" required>
+                <input type="text" class="form-control" id="no_kk" name="no_kk" placeholder="Nomor KK" value="{{ $data->no_kk }}">
               </div>
 
               <div class="form-group">

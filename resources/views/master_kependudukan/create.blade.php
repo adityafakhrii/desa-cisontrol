@@ -19,7 +19,7 @@
 
               <div class="form-group">
                 <label for="no_kk">Nomor KK</label>
-                <input type="text" class="form-control" id="no_kk" name="no_kk" placeholder="Nomor KK" required>
+                <input type="text" class="form-control" id="no_kk" name="no_kk" placeholder="Nomor KK">
               </div>
 
               <div class="form-group">
@@ -184,7 +184,7 @@
               </div>
 
               <button type="submit" class="btn btn-primary mr-2">Submit</button>
-              <a href="{{ route('master-kependudukan.index') }}" class="btn btn-light">Cancel</a>
+              <a href="{{ route('master-kependudukan.index') }}" class="btn btn-light">Batal</a>
             </form>
           </div>
         </div>

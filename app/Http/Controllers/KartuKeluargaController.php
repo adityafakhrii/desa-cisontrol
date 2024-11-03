@@ -2,63 +2,83 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KartuKeluarga;
+use App\Models\MasterKependudukan;
+use App\Models\RT;
+use App\Models\RW;
 use Illuminate\Http\Request;
 
 class KartuKeluargaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $dataKependudukan = KartuKeluarga::with(['kepalaKeluarga', 'rt', 'rw'])->get();
+        return view('kartu_keluarga.index', compact('dataKependudukan'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
-    {
-        //
-    }
+{
+    // Fetch all 'MasterKependudukan' records to populate the 'nik_kepala_keluarga' select input
+    $kepalaKeluarga = MasterKependudukan::all(['nik', 'nama']);
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Fetch all 'RT' and 'RW' records for 'rt_id' and 'rw_id' select inputs
+    $rtOptions = RT::all(['id', 'no_rt']);
+    $rwOptions = RW::all(['id', 'no_rw']);
+
+    return view('kartu_keluarga.create', compact('kepalaKeluarga', 'rtOptions', 'rwOptions'));
+}
+
     public function store(Request $request)
     {
-        //
+        // $request->validate([
+        //     'no_kk' => 'required|unique:kartu_keluarga,no_kk|max:16',
+        //     'no_urut' => 'required|integer',
+        //     'tanggal_pembuatan' => 'required|date',
+        //     'nik_kepala_keluarga' => 'required|exists:master_kependudukan,nik',
+        //     'jenis_permohonan' => 'required|string|max:50',
+        //     'dusun' => 'required|string|max:50',
+        //     'rt_id' => 'nullable|exists:rt,id',
+        //     'rw_id' => 'nullable|exists:rw,id',
+        //     'no_telp' => 'nullable|string|max:15',
+        //     'alasan_permohonan' => 'nullable|string',
+        // ]);
+
+        KartuKeluarga::create($request->all());
+        return redirect()->route('kartu-keluarga.index')->with('success', 'Data Kartu Keluarga berhasil ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function edit($no_kk)
     {
-        //
+        $kartuKeluarga = KartuKeluarga::findOrFail($no_kk);
+        $kepalaKeluarga = MasterKependudukan::all(['nik', 'nama']);
+        $rtOptions = RT::all(['id', 'no_rt']);
+        $rwOptions = RW::all(['id', 'no_rw']);
+        return view('kartu_keluarga.edit', compact('kartuKeluarga','kepalaKeluarga', 'rtOptions', 'rwOptions'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update(Request $request, $no_kk)
     {
-        //
+        // $request->validate([
+        //     'no_urut' => 'required|integer',
+        //     'tanggal_pembuatan' => 'required|date',
+        //     'nik_kepala_keluarga' => 'required|exists:master_kependudukan,nik',
+        //     'jenis_permohonan' => 'required|string|max:50',
+        //     'dusun' => 'required|string|max:50',
+        //     'rt_id' => 'nullable|exists:rt,id',
+        //     'rw_id' => 'nullable|exists:rw,id',
+        //     'no_telp' => 'nullable|string|max:15',
+        //     'alasan_permohonan' => 'nullable|string',
+        // ]);
+
+        $kartuKeluarga = KartuKeluarga::findOrFail($no_kk);
+        $kartuKeluarga->update($request->all());
+        return redirect()->route('kartu-keluarga.index')->with('success', 'Data Kartu Keluarga berhasil diperbarui');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy($no_kk)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $kartuKeluarga = KartuKeluarga::findOrFail($no_kk);
+        $kartuKeluarga->delete();
+        return redirect()->route('kartu-keluarga.index')->with('success', 'Data Kartu Keluarga berhasil dihapus');
     }
 }
